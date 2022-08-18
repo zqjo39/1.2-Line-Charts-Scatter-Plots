@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<canvas id="myChart"></canvas>
+<script>
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            datasets: [{
+                data: [95, 36, 64, 48, 114, 46, 101, 33, 46, 82, 119, 25],
+                label: 'Foodstuffs',
+                borderColor: 'rgba(120, 120, 255, 1)'
+            },
+                {
+                    data: [122, 42, 82, 0, 74, 26, 33, 11, 15, 110, 91, 100],
+                    label: 'Clothes',
+                    borderColor: 'rgba(255, 100, 255, 1)'
+                },
+                {
+                    data: [91, 103, 58, 43, 108, 92, 77, 116, 19, 47, 86, 121],
+                    label: 'Amazon',
+                    borderColor: 'rgba(100, 200, 100, 1)'
+                },
+                {
+                    data: [0, 26, 33, 11, 5, 110, 91, 20, 36, 10, 56, 27],
+                    label: 'Movies',
+                    borderColor: 'rgba(250, 250, 150, 1)'
+                }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Monthly Spending'
+                },
+                legend: {
+                    position: 'left'
+                }
+            }
+        }
+    });
+</script>
+<canvas id="chart2"></canvas>
+<script>
+    var cty = document.getElementById('chart2');
+    var nextChart = new Chart(cty, {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'Dataset1',
+                backgroundColor: 'rgba(255, 200, 50, 1)',
+                pointBackgroundColor: 'rgba(255, 200, 50, 1)',
+                pointRadius: 4,
+                data: [
+                    {x: 7, y: 10},
+                    {x: 11, y: 25},
+                    {x: 15, y: 15},
+                ],
+            },
+                {
+                    label: 'Dataset2',
+                    backgroundColor: 'rgba(50, 200, 50, 1)',
+                    pointBackgroundColor: 'rgba(50, 200, 50, 1)',
+                    pointRadius: 4,
+                    data: [
+                        {x: 1, y: 10},
+                        {x: 7, y: 13},
+                        {x: 15, y: 16},
+                    ]
+                }]
+        },
+        options: {
+            scales: {
+                xAxis: {
+                    beginAtZero: true
+                },
+                yAxis: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Sales'
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
